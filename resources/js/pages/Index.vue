@@ -7,7 +7,8 @@
 <style scoped lang="scss">
 .Test {
     @include div100;
+    border: 1px solid red;
     background: blue;
-
 }
 </style>
+

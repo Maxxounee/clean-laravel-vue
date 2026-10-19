@@ -10,7 +10,9 @@
         "check:fix": "vp check --fix",
         "types:check": "vue-tsc --noEmit",
         "lint": "eslint . --ext .js,.vue,.ts",
-        "lint:fix": "eslint . --ext .js,.vue,.ts --fix"
+        "lint:fix": "eslint . --ext .js,.vue,.ts --fix",
+        "lint:styles": "stylelint \"resources/**/*.{css,scss,vue}\"",
+        "lint:styles:fix": "stylelint \"resources/**/*.{css,scss,vue}\" --fix"
     },
     "dependencies": {
         "@inertiajs/vite": "^3.0.0",
@@ -25,6 +27,8 @@
         "lil-gui": "^0.21.0",
         "pinia": "^4.0.3",
         "reset-css": "^5.0.2",
+        "stylelint-config-clean-order": "^10.0.0",
+        "stylelint-config-standard-vue": "^2.0.0",
         "three": "^0.186.1",
         "typescript": "^5.2.2",
         "vite": "^8.0.0",
@@ -39,6 +43,9 @@
         "eslint": "^8.57.0",
         "eslint-plugin-vue": "^10.11.1",
         "sass-embedded": "^1.105.1",
+        "stylelint": "^17.16.0",
+        "stylelint-config-html": "^2.0.0",
+        "stylelint-config-standard-scss": "^17.0.0",
         "vite-plus": "0.3.0",
         "vue-tsc": "^2.2.4"
     },
