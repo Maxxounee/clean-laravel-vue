@@ -4,7 +4,6 @@ import inertia from '@inertiajs/vite';
 import { wayfinder } from '@laravel/vite-plugin-wayfinder';
 import laravel from 'laravel-vite-plugin';
 import { defineConfig, lazyPlugins } from 'vite-plus';
-import { templateCompilerOptions } from '@tresjs/core';
 import * as path from 'node:path';
 
 const isStaticBuild = process.env.STATIC_BUILD === 'true';
@@ -19,27 +18,24 @@ export default defineConfig({
 			laravel({
 				input: [
 					'resources/js/app.ts',
-					// 'resources/style/style.scss',
+					'resources/style/style.scss',
 				],
 				refresh: true,
 				...(isStaticBuild ? [] : [wayfinder({ formVariants: true })]),
 			}),
+
 			inertia(),
 			wayfinder({
 				formVariants: true,
 			}),
 		]),
 		vue({
-			compilerOptions: {
-				isCustomElement: (tag) => tag.startsWith('Tres'),
-			},
 			template: {
 				transformAssetUrls: {
 					base: null,
 					includeAbsolute: false,
 				},
 			},
-			...templateCompilerOptions,
 		}),
 	],
 	server: {
